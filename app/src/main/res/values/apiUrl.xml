@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Base_URL">https://api.themoviedb.org/3/movie/</string>
+    <string name="Base_URL_Popular">popular</string>
+    <string name="Base_URL_Top_Rated">top_rated</string>
+    <string name="Base_URL_Image">https://image.tmdb.org/t/p/w500</string>
+</resources>
