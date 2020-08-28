@@ -32,8 +32,13 @@ public class MovieData {
     @SerializedName("release_date")
     @Expose
     private String movieReleaseDate;
+    private static String finalID;
+    @SerializedName("id")
+    @Expose
+    private String id;
+    private String youtubeLink;
 
-    public MovieData(String movieTitle, String movieOriginalTitle, String moviePoster, String movieImage_optional, String movieOverview, String movieUserRating, String movieReleaseDate) {
+    public MovieData(String movieTitle, String movieOriginalTitle, String moviePoster, String movieImage_optional, String movieOverview, String movieUserRating, String movieReleaseDate, String id) {
         this.movieTitle = movieTitle;
         this.movieOriginalTitle = movieOriginalTitle;
         this.moviePoster = moviePoster;
@@ -41,6 +46,30 @@ public class MovieData {
         this.movieOverview = movieOverview;
         this.movieUserRating = movieUserRating;
         this.movieReleaseDate = movieReleaseDate;
+        this.id = id;
+    }
+
+    public static String getFinalID() {
+        return finalID;
+    }
+
+    public static void setFinalID(String finalID) {
+        MovieData.finalID = finalID;
+    }
+
+    public static void setfList(List<MovieData> fList) {
+        if (fList != null) {
+            MovieData.fList = fList;
+            MovieData.isUpdated = true;
+        }
+    }
+
+    public String getYoutubeLink() {
+        return youtubeLink;
+    }
+
+    public void setYoutubeLink(String youtubeLink) {
+        this.youtubeLink = youtubeLink;
     }
 
     public static boolean isUpdated() {
@@ -51,12 +80,8 @@ public class MovieData {
         return fList;
     }
 
-    public static void setfList(List<MovieData> fList) {
-        if (fList == null) {
-            MovieData.fList = fList;
-            MovieData.isUpdated = true;
-        }
-
+    public String getId() {
+        return id;
     }
 
     public String getMovieTitle() {

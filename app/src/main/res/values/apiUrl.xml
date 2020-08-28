@@ -4,4 +4,5 @@
     <string name="Base_URL_Popular">popular</string>
     <string name="Base_URL_Top_Rated">top_rated</string>
     <string name="Base_URL_Image">https://image.tmdb.org/t/p/w500</string>
+    <string name="YouTube_URL">https://www.youtube.com/watch?v=</string>
 </resources>

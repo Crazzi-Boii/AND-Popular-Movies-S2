@@ -27,8 +27,6 @@ public class RetrofitNetworkCalls {
 
 
     public static void apiCallPopular(Context context, View view) {
-
-
         Call<MovieDataResponse> call = RetrofitClient
                 .getInstance(context)
                 .getApi()
@@ -40,6 +38,8 @@ public class RetrofitNetworkCalls {
                 List<MovieData> movieData = response.body().getMovieDataResults();
                 MovieData.setfList(movieData);
                 RetrofitNetworkCalls.initRecyclerView(view, context, movieData);
+
+                //Log.e("onResponse: ", "execute");
             }
             @Override
             public void onFailure(Call<MovieDataResponse> call, Throwable t) {
@@ -63,6 +63,7 @@ public class RetrofitNetworkCalls {
                 MovieData.setfList(movieData);
                 //MovieListAdapter.setA(movieData);
                 RetrofitNetworkCalls.initRecyclerView(view, context, movieData);
+                //Log.e("onResponse: ", "execute");
             }
 
             @Override

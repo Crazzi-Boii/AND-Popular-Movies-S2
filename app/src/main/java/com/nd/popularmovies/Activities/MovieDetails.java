@@ -4,13 +4,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nd.popularmovies.Models.MovieData;
+import com.nd.popularmovies.Network.TrailerCalls;
 import com.nd.popularmovies.R;
 import com.squareup.picasso.Picasso;
 
@@ -27,6 +30,8 @@ public class MovieDetails extends AppCompatActivity {
         setContentView(R.layout.activity_movie_details);
         setTitle(MovieData.getMovieData().getMovieTitle());
 
+        movieData = MovieData.getMovieData();
+        TrailerCalls.apiCallTrailerData(this, movieData.getId());
         //Log.e( "onCreate: MovieDetails", MovieData.getMovieData().getMovieTitle());
 
         initViews();
@@ -36,7 +41,6 @@ public class MovieDetails extends AppCompatActivity {
     }
 
     private void initViews() {
-        movieData = MovieData.getMovieData();
         BASE_URL = getString(R.string.Base_URL_Image);
 
         imageView = findViewById(R.id.IV_movie_detail_optional_picture);
@@ -76,4 +80,7 @@ public class MovieDetails extends AppCompatActivity {
         }
     }
 
+    public void showTrailer(View view) {
+        Toast.makeText(this, movieData.getYoutubeLink(), Toast.LENGTH_SHORT).show();
+    }
 }

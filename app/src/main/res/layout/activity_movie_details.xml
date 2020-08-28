@@ -6,10 +6,24 @@
     android:orientation="vertical"
     tools:context=".Activities.MovieDetails">
 
-    <ImageView
-        android:id="@+id/IV_movie_detail_optional_picture"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/IV_movie_detail_optional_picture"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignRight="@id/IV_movie_detail_optional_picture"
+            android:layout_alignBottom="@id/IV_movie_detail_optional_picture"
+            android:layout_margin="20dp"
+            android:onClick="showTrailer"
+            android:src="@drawable/ic_play_button" />
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
