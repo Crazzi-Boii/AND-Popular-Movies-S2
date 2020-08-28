@@ -1,5 +1,7 @@
 package com.nd.popularmovies.Activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -82,5 +84,6 @@ public class MovieDetails extends AppCompatActivity {
 
     public void showTrailer(View view) {
         Toast.makeText(this, movieData.getYoutubeLink(), Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.YouTube_URL) + movieData.getYoutubeLink())));
     }
 }
